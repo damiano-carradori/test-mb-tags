@@ -1,19 +1,15 @@
-# This is a basic workflow to help you get started with Actions
+# This name: "Lint PR"
 
-name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
 
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  test:
-    name: test triggers
-    runs-on: ubuntu-18.04
+  main:
+    name: Validate PR title
+    runs-on: ubuntu-latest
     steps:
-      - name: semantic-pull-request
-        uses: amannn/action-semantic-pull-request@v4.5.0
+      - uses: amannn/action-semantic-pull-request@v4.5.0
