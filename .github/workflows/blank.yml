@@ -15,5 +15,5 @@ jobs:
     name: test triggers
     runs-on: ubuntu-18.04
     steps:
-      - name: echo
-      - run: echo "pushed"
+      - name: semantic-pull-request
+        uses: amannn/action-semantic-pull-request@v4.5.0
